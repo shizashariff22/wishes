@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Moulya!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday, Moulya! 🎉</h1>
+        <p>Wishing you a day filled with love, joy, and all your favorite things. You are truly a wonderful friend, and I am so grateful to have you in my life.</p>
+        
+        <img src="images/gifes.gif" alt="Happy Birthday GIF" id="birthday-gif">
+        
+        <h2>Messages from Friends</h2>
+        <div class="messages">
+            <!-- Existing message -->
+            <div class="message">
+                <h3>From Shiza</h3>
+                <p>happy birthday babe 🥺! the first memory of you that i have is that we were in combined class in first year and you were this energetic and bubbly girl and i wanted to be your friend. guess that thought of mine did  becme into reality. It's crazy to think about everything we've been through together. I'm so grateful for all the memories we've made and i hope we create more in the future. You're one of a kind, and I'm so lucky to have you in my life.dont let anyone make you feel any less than you are. you deserve to be cherished and loved. im here to love all the versions of you yet to come. Love you so much!</p>
+                <div>
+                    <h3>From Trupti</h3>
+                    <p>Happy B'day Moulzzz🎂
+                    I don't usually get attached to people easily  but somehow u hv bcm an exception. U hv found a special place in my heart n u vl always be someone I cherish deeply. Forever and always, u vl remain someone truly special to me. Love u more than the words say 😘❤️
+                    
+                    Cheers to many more yrs of endless joy n adventures 🥳🥂</p></div>
+               
+                
+            </div>
+            <!-- New messages will be appended here by JavaScript -->
+        </div>
+        
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <img src="images/photo1.png" alt="Moulya with friends">
+            <img src="images/photo2.jpeg" alt="Moulya smiling">
+            <img src="images/photo3.jpeg" alt="Moulya smiling">
+            <img src="images/photo4.jpeg" alt="Moulya smiling">
+            <img src="images/photo5.jpeg" alt="Moulya smiling">
+        </div>
+        
+        <h2>Birthday Wishes</h2>
+        <form id="wish-form">
+            <input type="text" id="name" required>
+            <textarea id="wish" required></textarea>
+            <button type="submit">Send Wish</button>
+        </form>
+        
+        <div id="wishes"></div>
+    </div>
+
+    <script>
+        // Listen for form submission
+        document.getElementById('wish-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents page reload
+            
+            // Get the input values
+            const name = document.getElementById('name').value;
+            const wish = document.getElementById('wish').value;
+
+            // Create a new message div
+            const newMessage = document.createElement('div');
+            newMessage.classList.add('message');
+
+            // Add the name and wish content
+            newMessage.innerHTML = `<h3>From ${name}</h3><p>${wish}</p>`;
+
+            // Append the new message to the messages container
+            document.querySelector('.messages').appendChild(newMessage);
+
+            // Clear the form
+            document.getElementById('wish-form').reset();
+        });
+    </script>
+</body>
+</html>
